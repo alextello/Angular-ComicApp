@@ -1,0 +1,23 @@
+<h1>Héroes <small>Marvel y DC</small></h1>
+<hr>
+
+<div class="alert alert-info alert-dismissible fade show" role="alert" *ngIf="heroes.length === 0">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Cerrar</span>
+    </button>
+    <strong>No existe ningún héroe con el término </strong> {{termino}}
+</div>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+        <img [src]="heroe.img" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{heroe.nombre}}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+            <button (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">Ver más...</button>
+            <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block">Ver más...</a> -->
+        </div>
+    </div>
+</div>
