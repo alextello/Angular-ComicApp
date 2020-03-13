@@ -1,1 +1,17 @@
-<p>heroe works!</p>
+<div class="card border-{{colorCasa}} mb-3 animated fadeIn" style="max-width: 1020px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img [src]="heroe.img" class="card-img " alt="... ">
+            <a [routerLink]="['/heroes']" class="btn btn-block btn-outline-{{colorCasa}} m-3">Regresar</a>
+        </div>
+        <div class="col-md-8 ">
+            <div class="card-body ">
+                <h5 class="card-title ">{{heroe.nombre}}</h5>
+                <p class="card-text ">{{heroe.bio}}</p>
+                <p class="card-text "><small class="text-muted ">{{heroe.aparicion}}</small></p>
+                <img [src]="colorCasa == 'danger' ? 'assets/img/marvel.png' : 'assets/img/dc.png'" alt="" style="width: 8rem;">
+
+            </div>
+        </div>
+    </div>
+</div>
